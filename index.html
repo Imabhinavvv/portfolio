@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Abhinav Mamidi - Full Stack Developer Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&display=swap');
+        </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="cinzel">Abhinav</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#services">SERVICES</a>
+            <a href="#portfolio">PORTFOLIO</a>
+            <a href="#contact">CONTACT</a>
+           
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, I'm</h3>
+            <h1>Abhinav Mamidi</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p style="font-size: 1.8rem; color: var(--text-secondary); margin: 2rem 0;">Passionate about creating innovative solutions through code. I blend creativity with technical expertise to build impactful applications that solve real-world problems.</p>
+            <div class="social-media">
+                <a href="https://github.com/Imabhinavvv" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/abhinav-mamidi-in" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="mailto:abhinavmamidi.mails@gmail.com"><i class='bx bx-envelope'></i></a>
+                <a href="tel:+917569998462"><i class='bx bx-phone'></i></a>
+            </div>
+            <a href="#" class="btn" onclick="downloadResume()">Download Resume</a>
+        </div>
+        <div class="home-img">
+            <div class="profile-bg"></div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <div class="about-bg"></div>
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Aspiring Full-Stack Developer</h3>
+            <p>I'm a dedicated software developer with a passion for creating efficient, scalable solutions. My journey in technology spans multiple programming languages and frameworks, with expertise in both frontend and backend development. I thrive on tackling complex challenges and transforming innovative ideas into functional applications.</p>
+            
+            <div class="skills-container">
+                <span class="skill-tag">C Programming</span>
+                <span class="skill-tag">R</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Web Development</span>
+                <span class="skill-tag">Android Development</span>
+                <span class="skill-tag">Canva Design</span>
+                <span class="skill-tag">Data Analysis</span>
+            </div>
+            
+            <a href="#portfolio" class="btn">View Projects</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="heading">My <span>Services</span></h2>
+
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-code-alt'></i>
+                <h3>Full-Stack Development</h3>
+                <p>Building robust web applications using modern technologies and frameworks. From frontend interfaces to backend APIs, I create complete solutions that are scalable and maintainable.</p>
+                <a href="#contact" class="btn">Learn More</a>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bx-mobile-alt'></i>
+                <h3>Mobile App Development</h3>
+                <p>Creating intuitive and performant Android applications that provide seamless user experiences. I focus on clean architecture and efficient performance optimization.</p>
+                <a href="#contact" class="btn">Learn More</a>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bx-data'></i>
+                <h3>Data Analysis & Visualization</h3>
+                <p>Transforming raw data into meaningful insights using statistical analysis and visualization techniques. I help businesses make data-driven decisions with clear, actionable reports.</p>
+                <a href="#contact" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Featured <span>Projects</span></h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="./src/ppe.svg" alt="PPE Detection Project">
+                <div class="portfolio-layer">
+                    <h4>PPE Kit Detection</h4>
+                    <p>AI-powered system for detecting Personal Protective Equipment in automobile manufacturing environments, enhancing workplace safety through computer vision.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="./src/travel.svg" alt="AI Travel Guide">
+                <div class="portfolio-layer">
+                    <h4>AI Travel Guide</h4>
+                    <p>Intelligent travel companion application that provides personalized recommendations and itinerary planning using machine learning algorithms.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="./src/visual.svg" alt="Portfolio Website">
+                <div class="portfolio-layer">
+                    <h4>Visualization tool</h4>
+                    <p>A visualization tool to understand how an algorithm works.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="./src/tutor.svg" alt="Data Analytics Dashboard">
+                <div class="portfolio-layer">
+                    <h4>AI Tutor</h4>
+                    <p>AI tutor for the user to learn the concepts of the subject in a better way.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="./src/app.svg" alt="Android Application">
+                <div class="portfolio-layer">
+                    <h4>Mobile Application</h4>
+                    <p>Feature-rich Android application with intuitive user interface and robust backend integration, focusing on performance and user experience.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="./src/code.svg" alt="Java Application" style="width:100%; height:100%; object-fit:cover; display:block;">
+                <div class="portfolio-layer">
+                    <h4>AI Code Reviewer</h4>
+                    <p>An AI powered code reviewer for the user to review their code and get the feedback.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Get In <span>Touch</span></h2>
+
+        <div class="contact-info">
+            <div class="contact-card">
+                <a href="mailto:abhinavmamidi.mails@gmail.com">
+                    <i class='bx bx-envelope'></i>
+                    <h3>Email</h3>
+                    <p>abhinavmamidi.mails@gmail.com</p>
+                </a>
+            </div>
+            <div class="contact-card">
+                <a href="tel:+917569998462">
+                    <i class='bx bx-phone'></i>
+                    <h3>Phone</h3>
+                    <p>+91 7569998462</p>
+                </a>
+            </div>
+            <div class="contact-card">
+                <a href="https://www.linkedin.com/in/abhinav-mamidi-in" target="_blank">
+                    <i class='bx bxl-linkedin'></i>
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me professionally</p>
+                </a>
+            </div>
+        </div>
+
+        <form action="#" name="submit-to-google-sheet">
+            <div class="input-box">
+                <input type="text" name="Name" placeholder="Full Name" required>
+                <input type="email" name="Email Address" placeholder="Email Address" required>
+            </div>
+            <div class="input-box">
+                <input type="tel" name="Mobile Number" placeholder="Mobile Number">
+                <input type="text" name="Email Subject" placeholder="Subject" required>
+            </div>
+            <textarea name="Your Message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+        <span id="msg"></span>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>&copy; 2025 Abhinav Mamidi | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        // Mobile Menu Toggle
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
+
+        // Scroll Sections Active Link
+        let sections = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('header nav a');
+
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+
+                if(top >= offset && top < offset + height){
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                    });
+                };
+            });
+
+            let header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 100);
+            
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        };
+
+        // ScrollReveal Animations
+        ScrollReveal({
+            distance: '80px',
+            duration: 2000,
+            delay: 200
+        });
+
+        ScrollReveal().reveal('.home-content, .heading', {origin: 'top'});
+        ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', {origin: 'bottom'});
+        ScrollReveal().reveal('.home-content h1, .about-img', {origin: 'left'});
+        ScrollReveal().reveal('.home-content p, .about-content', {origin: 'right'});
+
+        // Typed.js Animation
+        const typed = new Typed('.multiple-text', {
+            strings: ['Full-Stack Developer', 'Python Programmer', 'Android Developer', 'Data Analyst', 'Problem Solver'],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 1000,
+            loop: true
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission (you can integrate with your backend)
+        const form = document.querySelector('form[name="submit-to-google-sheet"]');
+        const msg = document.getElementById('msg');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            // Add your form submission logic here
+            msg.innerHTML = "Thank you for your message! I'll get back to you soon.";
+            msg.style.color = "var(--main-color)";
+            form.reset();
+            setTimeout(() => {
+                msg.innerHTML = "";
+            }, 5000);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // Parallax effect for home section
+        window.addEventListener('scroll', () => {
+            let scrolled = window.pageYOffset;
+            let parallax = document.querySelector('.home-img');
+            let speed = scrolled * 0.5;
+            
+            if (parallax) {
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Resume Download Function
+        function downloadResume() {
+            // Create a link element
+            const link = document.createElement('a');
+            link.href = './resume.pdf';
+            link.download = 'Abhinav_Mamidi_Resume.pdf';
+            
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Optional: Show a success message
+            const downloadBtn = document.querySelector('.btn[onclick="downloadResume()"]');
+            const originalText = downloadBtn.textContent;
+            downloadBtn.textContent = 'Resume Downloaded!';
+            downloadBtn.style.backgroundColor = '#28a745';
+            
+            setTimeout(() => {
+                downloadBtn.textContent = originalText;
+                downloadBtn.style.backgroundColor = '';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
