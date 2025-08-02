@@ -151,4 +151,4 @@ While this is a personal portfolio, suggestions and improvements are welcome! Fe
 
 **Built with ❤️ by Abhinav Mamidi**
 
-*Last updated: January 2025* 
+*Last updated: August 2025* 
