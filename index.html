@@ -15,35 +15,105 @@
 </head>
 
 <body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+            <div class="shape shape-6"></div>
+        </div>
+        <div class="gradient-overlay"></div>
+    </div>
+
     <header class="header">
-        <a href="#" class="cinzel">Abhinav.</a>
-        <i class='bx bx-menu' id="menu-icon"></i>
-        <nav class="navbar">
-            <a href="#home" class="active">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#services">SERVICES</a>
-            <a href="#portfolio">PORTFOLIO</a>
-            <a href="#contact">CONTACT</a>
-           
-        </nav>
+        <div class="nav-container">
+            <a href="#" class="logo cinzel">Abhinav.</a>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="navbar" id="navbar">
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link active">
+                        <span class="nav-text">HOME</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                    <a href="#about" class="nav-link">
+                        <span class="nav-text">ABOUT</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                    <a href="#services" class="nav-link">
+                        <span class="nav-text">SERVICES</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                    <a href="#portfolio" class="nav-link">
+                        <span class="nav-text">PORTFOLIO</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                    <a href="#contact" class="nav-link">
+                        <span class="nav-text">CONTACT</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hello, I'm</h3>
-            <h1>Abhinav Mamidi</h1>
-            <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p style="font-size: 1.8rem; color: var(--text-secondary); margin: 2rem 0;">Passionate about creating innovative solutions through code. I blend creativity with technical expertise to build impactful applications that solve real-world problems.</p>
-            <div class="social-media">
-                <a href="https://github.com/Imabhinavvv" target="_blank"><i class='bx bxl-github'></i></a>
-                <a href="https://www.linkedin.com/in/abhinav-mamidi-in" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                <a href="mailto:abhinavmamidi.mails@gmail.com"><i class='bx bx-envelope'></i></a>
-                <a href="tel:+917569998462"><i class='bx bx-phone'></i></a>
+        <div class="home-container">
+            <div class="home-content">
+                <div class="text-content">
+                    <h3 class="greeting">Hello, I'm</h3>
+                    <h1 class="name">Abhinav Mamidi</h1>
+                    <h3 class="role">And I'm a <span class="multiple-text"></span></h3>
+                    <p class="description">Passionate about creating innovative solutions through code. I blend creativity with technical expertise to build impactful applications that solve real-world problems.</p>
+                </div>
+                
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <div class="image-container">
+                            <div class="profile-bg"></div>
+                            <div class="profile-border"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interaction-section">
+                    <div class="social-media">
+                        <a href="https://github.com/Imabhinavvv" target="_blank" class="social-link">
+                            <i class='bx bxl-github'></i>
+                            <span class="social-tooltip">GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/abhinav-mamidi-in" target="_blank" class="social-link">
+                            <i class='bx bxl-linkedin'></i>
+                            <span class="social-tooltip">LinkedIn</span>
+                        </a>
+                        <a href="mailto:abhinavmamidi.mails@gmail.com" class="social-link">
+                            <i class='bx bx-envelope'></i>
+                            <span class="social-tooltip">Email</span>
+                        </a>
+                        <a href="tel:+917569998462" class="social-link">
+                            <i class='bx bx-phone'></i>
+                            <span class="social-tooltip">Phone</span>
+                        </a>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <button class="cta-button primary" onclick="downloadResume()">
+                            <span class="button-text">Download Resume</span>
+                            <i class='bx bx-download'></i>
+                        </button>
+                        <button class="cta-button secondary" onclick="scrollToSection('contact')">
+                            <span class="button-text">Get In Touch</span>
+                            <i class='bx bx-message-rounded'></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <a href="#" class="btn" onclick="downloadResume()">Download Resume</a>
-        </div>
-        <div class="home-img">
-            <div class="profile-bg"></div>
         </div>
     </section>
 
@@ -189,7 +259,10 @@
                 <input type="text" name="Email Subject" placeholder="Subject" required>
             </div>
             <textarea name="Your Message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-            <input type="submit" value="Send Message" class="btn">
+            <button class="button">
+                <span class="button-content"><input type="submit" value="Send Message" ></span>
+            </button>
+            
         </form>
         <span id="msg"></span>
     </section>
@@ -207,17 +280,17 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         // Mobile Menu Toggle
-        let menuIcon = document.querySelector('#menu-icon');
-        let navbar = document.querySelector('.navbar');
+        let navToggle = document.querySelector('#nav-toggle');
+        let navbar = document.querySelector('#navbar');
 
-        menuIcon.onclick = () => {
-            menuIcon.classList.toggle('bx-x');
+        navToggle.onclick = () => {
+            navToggle.classList.toggle('active');
             navbar.classList.toggle('active');
         };
 
         // Scroll Sections Active Link
         let sections = document.querySelectorAll('section');
-        let navLinks = document.querySelectorAll('header nav a');
+        let navLinks = document.querySelectorAll('.nav-link');
 
         window.onscroll = () => {
             sections.forEach(sec => {
@@ -229,15 +302,15 @@
                 if(top >= offset && top < offset + height){
                     navLinks.forEach(links => {
                         links.classList.remove('active');
-                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                        document.querySelector('.nav-link[href*=' + id + ']').classList.add('active');
                     });
                 };
             });
 
-            let header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 100);
+            let header = document.querySelector('.header');
+            header.classList.toggle('scrolled', window.scrollY > 100);
             
-            menuIcon.classList.remove('bx-x');
+            navToggle.classList.remove('active');
             navbar.classList.remove('active');
         };
 
@@ -248,10 +321,10 @@
             delay: 200
         });
 
-        ScrollReveal().reveal('.home-content, .heading', {origin: 'top'});
-        ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', {origin: 'bottom'});
-        ScrollReveal().reveal('.home-content h1, .about-img', {origin: 'left'});
-        ScrollReveal().reveal('.home-content p, .about-content', {origin: 'right'});
+        ScrollReveal().reveal('.text-content, .heading', {origin: 'top'});
+        ScrollReveal().reveal('.profile-section, .services-container, .portfolio-box, .contact form', {origin: 'bottom'});
+        ScrollReveal().reveal('.interaction-section, .about-img', {origin: 'left'});
+        ScrollReveal().reveal('.social-media, .about-content', {origin: 'right'});
 
         // Typed.js Animation
         const typed = new Typed('.multiple-text', {
@@ -272,13 +345,12 @@
             });
         });
 
-        // Form submission (you can integrate with your backend)
+        // Form submission
         const form = document.querySelector('form[name="submit-to-google-sheet"]');
         const msg = document.getElementById('msg');
 
         form.addEventListener('submit', e => {
             e.preventDefault();
-            // Add your form submission logic here
             msg.innerHTML = "Thank you for your message! I'll get back to you soon.";
             msg.style.color = "var(--main-color)";
             form.reset();
@@ -287,45 +359,50 @@
             }, 5000);
         });
 
-        // Add loading animation
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '1';
-        });
-
-        // Parallax effect for home section
-        window.addEventListener('scroll', () => {
-            let scrolled = window.pageYOffset;
-            let parallax = document.querySelector('.home-img');
-            let speed = scrolled * 0.5;
-            
-            if (parallax) {
-                parallax.style.transform = `translateY(${speed}px)`;
-            }
-        });
-
         // Resume Download Function
         function downloadResume() {
-            // Create a link element
             const link = document.createElement('a');
             link.href = './resume.pdf';
             link.download = 'Abhinav_Mamidi_Resume.pdf';
             
-            // Append to body, click, and remove
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
             
-            // Optional: Show a success message
-            const downloadBtn = document.querySelector('.btn[onclick="downloadResume()"]');
+            const downloadBtn = document.querySelector('.cta-button.primary .button-text');
             const originalText = downloadBtn.textContent;
-            downloadBtn.textContent = 'Resume Downloaded!';
-            downloadBtn.style.backgroundColor = '#28a745';
+            downloadBtn.textContent = 'Downloaded!';
             
             setTimeout(() => {
                 downloadBtn.textContent = originalText;
-                downloadBtn.style.backgroundColor = '';
             }, 2000);
         }
+
+        // Scroll to section function
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Floating shapes animation
+        function animateShapes() {
+            const shapes = document.querySelectorAll('.shape');
+            shapes.forEach((shape, index) => {
+                const randomX = Math.random() * 100;
+                const randomY = Math.random() * 100;
+                const duration = 10000 + Math.random() * 5000;
+                
+                shape.style.animationDelay = `${index * 0.5}s`;
+                shape.style.animationDuration = `${duration}ms`;
+            });
+        }
+
+        // Initialize animations
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+            animateShapes();
+        });
     </script>
 </body>
 </html>
