@@ -315,7 +315,7 @@ const App: React.FC = () => {
                     ))}
                   </ul>
                   <button onClick={() => scrollTo('contact')} className="flex items-center gap-2 text-violet-400 font-bold group-hover:gap-4 transition-all">
-                    <span>Inquire Now</span>
+                    <span></span>
                     <ArrowUpRight size={18} />
                   </button>
                 </div>
