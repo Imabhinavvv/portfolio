@@ -84,10 +84,13 @@ const App: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobileMenuOpen]);
 
   const filteredProjects = PROJECTS_DATA.filter(p => activeTab === 'all' || p.category === activeTab);
 
@@ -109,10 +112,12 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0F] text-gray-200">
+    <div className="min-h-screen bg-[#0A0A0F] text-gray-200 overflow-x-hidden">
       {/* Navbar */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0A0A0F]/90 backdrop-blur-xl border-b border-white/10 py-4 shadow-lg' : 'bg-transparent py-6'}`}>
-        <div className="container mx-auto px-8 md:px-12 flex justify-between items-center">
+      <nav
+        className={`fixed top-0 w-full z-50 transition-all duration-300 bg-[#0A0A0F]/90 backdrop-blur-xl border-b border-white/10 py-4 md:border-0 md:backdrop-blur-0 ${isScrolled ? 'md:bg-[#0A0A0F]/90 md:backdrop-blur-xl md:border-b md:border-white/10 md:py-4 md:shadow-lg' : 'md:bg-transparent md:py-6'}`}
+      >
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 flex justify-between items-center">
           <button onClick={() => scrollTo('home')} className="text-2xl font-serif-logo font-bold text-white tracking-wider group">
             ABHINAV<span className="text-violet-500 transition-colors group-hover:text-amber-500">.</span>
           </button>
@@ -136,14 +141,22 @@ const App: React.FC = () => {
             </button>
           </div>
 
-          <button className="md:hidden text-white p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button
+            className={`md:hidden text-white p-2 rounded-xl glass-card transition-all shadow-lg shadow-violet-500/10 ${
+              isMobileMenuOpen
+                ? 'bg-gradient-to-br from-[#0A0A0F]/90 via-violet-900/40 to-amber-900/30 border border-violet-500/30'
+                : 'bg-gradient-to-br from-violet-600/15 to-amber-500/10 hover:from-violet-600/25 hover:to-amber-500/20'
+            }`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-0 bg-[#0A0A0F]/98 z-40 md:hidden flex flex-col items-center justify-center gap-8 transition-transform duration-500 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed inset-0 bg-[#050507]/80 backdrop-blur-xl z-40 md:hidden flex flex-col items-center justify-center gap-8 transition-transform duration-500 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         {['home', 'about', 'services', 'portfolio', 'contact'].map(item => (
           <button 
             key={item} 
@@ -161,18 +174,18 @@ const App: React.FC = () => {
         <div className="absolute top-[20%] -left-20 w-[30rem] h-[30rem] bg-violet-600/10 blur-[120px] rounded-full animate-pulse" />
         <div className="absolute bottom-[20%] -right-20 w-[30rem] h-[30rem] bg-amber-600/10 blur-[120px] rounded-full animate-pulse delay-700" />
         
-        <div className="container mx-auto px-8 md:px-12 grid md:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center relative z-10">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border border-white/10 mb-6">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
               <span className="text-xs font-medium text-gray-400 uppercase tracking-widest">Available for opportunities</span>
             </div>
             <h2 className="text-xl text-gray-400 font-medium mb-4">Hello, I'm</h2>
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight">
               <span className="text-white block">Abhinav</span>
               <span className="gradient-text">Mamidi</span>
             </h1>
-            <div className="h-12 flex items-center text-2xl md:text-3xl font-medium text-gray-300 mb-8">
+            <div className="h-12 flex items-center text-xl sm:text-2xl md:text-3xl font-medium text-gray-300 mb-8">
               <span>{typedText}</span>
               <span className="w-1 h-8 bg-violet-400 ml-1 animate-pulse" />
             </div>
@@ -229,7 +242,7 @@ const App: React.FC = () => {
 
       {/* About Section */}
       <section id="about" className="py-24 relative overflow-hidden">
-        <div className="container mx-auto px-8 md:px-12 grid lg:grid-cols-2 gap-20 items-center">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative order-2 lg:order-1 px-4 sm:px-0">
              <div className="glass-card rounded-[2rem] p-10 border border-white/10 relative z-10">
                 <div className="flex items-center gap-4 mb-8">
@@ -264,7 +277,7 @@ const App: React.FC = () => {
 
           <div className="order-1 lg:order-2">
             <span className="text-violet-400 text-sm font-bold uppercase tracking-[0.2em] mb-4 block">About Me</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
               Aspiring <span className="gradient-text">Full-Stack Developer</span>
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
@@ -288,10 +301,10 @@ const App: React.FC = () => {
 
       {/* Services Section */}
       <section id="services" className="py-24 bg-[#08080D]">
-        <div className="container mx-auto px-8 md:px-12">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="text-violet-400 text-sm font-bold uppercase tracking-[0.2em] mb-4 block">What I Do</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Expert <span className="gradient-text">Services</span></h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Expert <span className="gradient-text">Services</span></h2>
             <p className="text-gray-500 text-lg">Specialized in creating digital experiences that combine aesthetics with functionality.</p>
           </div>
 
@@ -327,11 +340,11 @@ const App: React.FC = () => {
 
       {/* Portfolio Section */}
       <section id="portfolio" className="py-24">
-        <div className="container mx-auto px-8 md:px-12">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
             <div className="max-w-xl">
               <span className="text-violet-400 text-sm font-bold uppercase tracking-[0.2em] mb-4 block">Portfolio</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Featured <span className="gradient-text">Projects</span></h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Featured <span className="gradient-text">Projects</span></h2>
               <p className="text-gray-500 text-lg">Showcasing technical skills through real-world applications and experimental builds.</p>
             </div>
             
@@ -391,10 +404,10 @@ const App: React.FC = () => {
       <section id="contact" className="py-24 bg-[#08080D] relative overflow-hidden">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60rem] h-[30rem] bg-violet-600/5 blur-[150px] rounded-full" />
         
-        <div className="container mx-auto px-8 md:px-12 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="text-violet-400 text-sm font-bold uppercase tracking-[0.2em] mb-4 block">Get In Touch</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's <span className="gradient-text">Collaborate</span></h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Let's <span className="gradient-text">Collaborate</span></h2>
             <p className="text-gray-500 text-lg">Have a project in mind or want to collaborate? Feel free to reach out!</p>
           </div>
 
@@ -428,7 +441,7 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            <div className="glass-card p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden">
+            <div className="glass-card w-full max-w-full p-6 sm:p-8 lg:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-white/5 relative overflow-hidden">
                <div className="absolute top-0 right-0 w-32 h-32 bg-violet-600/10 blur-[60px] rounded-full" />
                <form
                  className="space-y-6 relative z-10"
@@ -515,7 +528,7 @@ const App: React.FC = () => {
 
       {/* Footer */}
       <footer className="py-10 border-t border-white/5">
-        <div className="container mx-auto px-8 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} Abhinav Mamidi. All rights reserved.</p>
           <div className="flex items-center gap-2 text-sm text-gray-500">
             <span>Made with</span>
