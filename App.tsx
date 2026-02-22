@@ -203,7 +203,7 @@ const App: React.FC = () => {
             </div>
             <div className="flex gap-4">
               {[
-                { icon: Github, link: "https://github.com/abhinavmamidi" },
+                { icon: Github, link: "https://github.com/Imabhinavvv" },
                 { icon: Linkedin, link: "https://www.linkedin.com/in/abhinav-mamidi-in" },
                 { icon: Mail, link: "mailto:abhinavmamidi.mails@gmail.com" }
               ].map((social, i) => (
@@ -434,7 +434,7 @@ const App: React.FC = () => {
               <div className="pt-10">
                 <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-6">Socials</p>
                 <div className="flex gap-4">
-                   <a href="https://github.com/abhinavmamidi" className="w-12 h-12 glass-card rounded-full flex items-center justify-center hover:scale-110 transition-transform"><Github size={20} /></a>
+                   <a href="https://github.com/Imabhinavvv" className="w-12 h-12 glass-card rounded-full flex items-center justify-center hover:scale-110 transition-transform"><Github size={20} /></a>
                    <a href="https://www.linkedin.com/in/abhinav-mamidi-in" className="w-12 h-12 glass-card rounded-full flex items-center justify-center hover:scale-110 transition-transform"><Linkedin size={20} /></a>
                    <a href="mailto:abhinavmamidi.mails@gmail.com" className="w-12 h-12 glass-card rounded-full flex items-center justify-center hover:scale-110 transition-transform"><Mail size={20} /></a>
                 </div>
